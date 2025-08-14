@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <form id= "reform" onsubmit="return display()">
+          Name:<input type="text" id="cname"><br><br>
+          Education:<input type="text" id="education"><br><br>
+          <input type="submit" value="submit">
+        </form>
+        <div>
+            your name is entered as <span id="spanname"></span> and my education qualification is<span id="spaneducation"></span>
+        </div>
+        <script>
+            function display() {
+                var varname=documrnt.getElementId('cname').value;
+                 var vared=documrnt.getElementId('education').value;
+                document.getElementById('spaneducation').innerText=vared;
+                document.getElementById('spanname').innerText=varname;
+                 
+                return false;//dom-document object model
+            }
+        </script>
+    </body>
+</html>

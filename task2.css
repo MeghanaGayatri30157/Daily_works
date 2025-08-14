@@ -1,0 +1,11 @@
+#container{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 30px;
+    border:5px solid black;
+    border-style:dotted;
+    border-top-style:solid;
+    border-color:black;
+    background-color:rgb(27, 165, 119) ;
+    background: radial-gradient(circle,white,pink);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery with Hover Overlay</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #1bb6e6;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      height: auto;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(237, 242, 239, 0.6);
+      color: rgb(37, 171, 215);
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.4s ease;
+      font-size: 20px;
+    }
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Image Gallery with Hover Overlay</h2>
+ <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://i.pinimg.com/736x/85/fd/05/85fd05bd8e7bb9c451c00d7df4763b84.jpg" alt="Image 1">
+      <div class="overlay">Caption 1</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/300x200?text">

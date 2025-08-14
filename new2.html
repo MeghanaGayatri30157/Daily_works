@@ -1,0 +1,24 @@
+
+<html>
+    <head>
+        <title>Form Validation Example</title>
+    </head>
+    <body>
+        <form id="regform" onsubmit="return display()">
+            Name: <input type="text" id="cname"><br><br>
+            <button id="submit" type="'button">Submit</button>
+        </form>
+        <div>
+            You name is entered as <span id="spanname"></span>
+        </div>
+        <script>
+            
+            function display(){
+                var varname=document.getElementById('cname').value;
+                document.getElementById('spanname').innerText=varname;
+                return false;
+                
+            }
+        </script>
+    </body>
+</html>

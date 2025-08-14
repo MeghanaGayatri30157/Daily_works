@@ -1,0 +1,37 @@
+#defining the graph as an adjacency list
+graph={
+    'A':['B','C'],
+    'B':['D','E'],
+    'C':['F'],
+    'D':[],
+    'E':['F'],
+    'F':[]
+}
+#iterative dfs uusing a stack that also tracks the path
+def dfs_search_with_path(graph,root,target):
+    stack=[(root,[root])] #Stack holds(node,path_to_node)
+    visited=set()
+    while stack:
+        current_node,path=stack.pop()
+        if current_node==target:
+            return path
+        if current_node not in visited:
+            visited.add(current_node)
+            for neighbor in reversed(graph[current_node]):
+                if neighbor not in visited:
+                    stack.append((neighbor,path+[neighbor]))
+    return None
+#main program
+if __name__ == "__main__":
+    root='A' 
+    target=input("Enter the node to search for:").strip().upper()
+
+    if target not in graph:
+        print("Target nodenot found in the graph.")
+    else:
+        path=dfs_search_with_path(graph,root,target)
+        if path:
+            print(f"Node '{target}' is reachable from root node '{root}'.")
+            print("Path:","->".join(path))
+        else:
+            print(f"Node '{target}' is NOT reachable from root node '{root}'.")
